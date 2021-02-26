@@ -3,7 +3,8 @@ A repository to learn how to code bukkit/spigot plugins. Creating class concepts
 <br>
 <h5>Existing Features</h5>
 <ul>
-  <li>Elf wind & reflect</li>
+  <li>Elf wind</li>
+  <li>Elf reflect</li>
   <li>Soldier wallclimb</li>
   <li>Concept dwarf ability: Dwarf Smash</li>
   <li>Angel Biotic Bow (animations)</li>
