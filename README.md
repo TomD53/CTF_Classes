@@ -6,7 +6,7 @@ My intention in doing this is to learn the skills surrounding creating plugins a
 <h5>Existing Features</h5>
 <ul>
   <li>Elf wind</li>
-  <li>Elf reflect</li>
+  <li>Elf reflect (changed to allow you to dissect the projectile)</li>
   <li>Soldier wallclimb</li>
   <li>Concept dwarf ability: Dwarf Smash</li>
   <li>Angel Biotic Bow (animations)</li>
