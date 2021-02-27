@@ -18,7 +18,7 @@ public class CTFClasses extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AngelBioticBow(this), this);
         getServer().getPluginManager().registerEvents(new ProjectileReflect(this, scheduler), this);
 
-        getServer().getPluginManager().registerEvents(new DwarfSmash(this), this);
+        // getServer().getPluginManager().registerEvents(new DwarfSmash(this), this);
     }
 
     @Override
