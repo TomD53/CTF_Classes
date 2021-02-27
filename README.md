@@ -1,4 +1,4 @@
-<h1>CTF Classes</h1>
+<h1>CTF Class Concepts</h1>
 A repository to learn how to code bukkit/spigot plugins. Creating class concepts and recreating abilities from the server mcctf.com
 <br>
 My intention in doing this is to learn the skills surrounding creating plugins and to create class concepts that can then be prototyped and adjusted before getting passed on to actual devs. Please do not ban me.
