@@ -1,4 +1,5 @@
 import angel.AngelBioticBow;
+import angel.AngelGrapplingHook;
 import dwarf.DwarfSmash;
 import elf.ProjectileReflect;
 import elf.Wind;
@@ -17,7 +18,7 @@ public class CTFClasses extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new WallClimb(), this);
         getServer().getPluginManager().registerEvents(new AngelBioticBow(this), this);
         getServer().getPluginManager().registerEvents(new ProjectileReflect(this, scheduler), this);
-
+        getServer().getPluginManager().registerEvents(new AngelGrapplingHook(this), this);
         // getServer().getPluginManager().registerEvents(new DwarfSmash(this), this);
     }
 
