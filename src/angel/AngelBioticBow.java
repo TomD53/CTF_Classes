@@ -46,21 +46,22 @@ public class AngelBioticBow implements Listener {
         ProjectileSource shooter = projectile.getShooter();
         if (!(shooter instanceof Player)) return; // If the shooter isn't a player then don't go any further
         Player player = ((Player) shooter);
-        if (!player.getItemInHand().getItemMeta().getDisplayName().equals("Biotic Bow") ||
-                !(projectile instanceof Arrow)) return;
+        String displayName = player.getItemInHand().getItemMeta().getDisplayName();
+        if (displayName != null) {
+            if (!displayName.equals("Biotic Bow") ||
+                    !(projectile instanceof Arrow)) return;
+        } else return;
+
 
         // Checks are now over, biotic bow code below:
 
-        int task_id = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
-            @Override
-            public void run() {
-                Location projectile_location = projectile.getLocation();
-                //ParticleEffect.HEART.display(projectile_location, new Vector(0,0,0),
-                //        (float) 0.5,5, null);
-                ParticleEffect.HEART.display(projectile_location);
-                if (projectile.isDead()) {
-                    Bukkit.getScheduler().cancelTask(projectile.getMetadata("task_id").get(0).asInt());
-                }
+        int task_id = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
+            Location projectile_location = projectile.getLocation();
+            //ParticleEffect.HEART.display(projectile_location, new Vector(0,0,0),
+            //        (float) 0.5,5, null);
+            ParticleEffect.HEART.display(projectile_location);
+            if (projectile.isDead()) {
+                Bukkit.getScheduler().cancelTask(projectile.getMetadata("task_id").get(0).asInt());
             }
         }, 0L, 1L);
 
@@ -92,10 +93,10 @@ public class AngelBioticBow implements Listener {
 
         if (force == 1) {
             ParticleEffect.ITEM_CRACK.display(projectile.getLocation(), 0, (float) 0.5, 0, particle_speed,
-                    (int) ((int) 250 * force), new ItemTexture(new ItemStack(Material.GOLD_BLOCK)), projectile.getWorld().getPlayers());
+                    (int) (250 * force), new ItemTexture(new ItemStack(Material.GOLD_BLOCK)), projectile.getWorld().getPlayers());
         } else {
             ParticleEffect.ITEM_CRACK.display(projectile.getLocation(), 0, (float) 0.5, 0, particle_speed,
-                    (int) ((int) 250 * force), new ItemTexture(new ItemStack(Material.IRON_BLOCK)), projectile.getWorld().getPlayers());
+                    (int) (250 * force), new ItemTexture(new ItemStack(Material.IRON_BLOCK)), projectile.getWorld().getPlayers());
         }
 
         projectile.remove();
